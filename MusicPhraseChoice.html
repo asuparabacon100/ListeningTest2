@@ -1,0 +1,1696 @@
+<p>
+	<!-- HIT template: TranscribeReceipt-v3.0 -->
+	<!-- Bootstrap v3.0.3 -->
+	<!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries -->
+</p>
+<link
+	crossorigin="anonymous"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+	integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+"
+	rel="stylesheet"
+/>
+<!-- The following snippet enables the 'responsive' behavior on smaller screens -->
+<meta content="width=device-width,initial-scale=1" name="viewport" /><!-- Instructions -->
+<section class="container" id="TranscribeReceipt">
+	<div class="row">
+		<div class="panel panel-primary instruction">
+			<!-- WARNING: the ids "collapseTrigger" and "instructionBody" are being used to enable expand/collapse feature -->
+			<a class="panel-heading" href="javascript:void(0);"><strong>Instruction</strong></a>
+			<div class="panel-body">
+				<!-- Add instruction body content here -->
+				<p>
+					In this task, you first listen to 3 phrases A, B, and C of music. <br />
+					Next, a song is presented divided into 5 phrases. <br />
+					Please listen to each phrase and choose whether it is a repetition of phrase A, B, or C, or not a repetition of any of them. <br />
+				</p>
+
+				<p>
+					<b>Consider two phrases as a repetition if their melodies in the first half match. </b><br />
+					In the following example, the first half of phrase 1 and that of phrase A have the same melody, so phrase 1 is a repetition of phrase A.<br />
+					Meanwhile, phrase 2 is not a repetition of phrase A, because it has a different melody from phrase A.
+				</p>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">Example</div>
+					<div class="panel-body">
+						<div class="phrase">
+							Phrase A
+							<audio controls>
+								<source src="https://dl.dropboxusercontent.com/scl/fi/ejusret1cu0xoyw36ktf2/exA.wav?rlkey=s0lfja6st6vnw9eddraqww72x" />
+								Your browser does not support the
+								<code>audio</code> element.
+							</audio>
+						</div>
+
+						<div class="phrase">
+							Phrase 1 <br />
+							(a repetition of phrase A)
+							<audio controls>
+								<source src="https://dl.dropboxusercontent.com/scl/fi/kppn8p46agi68k2iuyq15/ex1.wav?rlkey=homxgo90cy33dzialjkeeyizh" />
+								Your browser does not support the
+								<code>audio</code> element.
+							</audio>
+						</div>
+
+						<div class="phrase">
+							Phrase 2 <br />
+							(not a repetition of phrase A)
+							<audio controls>
+								<source src="https://dl.dropboxusercontent.com/scl/fi/z62qswujjgxxkw2c4esxl/ex2.wav?rlkey=feq6ge0syxh1lxgbu3jun7p3j" />
+								Your browser does not support the
+								<code>audio</code> element.
+							</audio>
+						</div>
+					</div>
+				</div>
+
+				<p>
+					Then, for each phrase, please answer how much variation there is between it and your chosen phrase.<br />
+					The melody in the first half should be the same, so focus on the melody in the second half and the accompaniment.
+				</p>
+
+				<p>Lastly, please answer the following question about the transitions between two phrases.</p>
+				<ol>
+					<b>Q.</b>
+					How natural are the transitions between two phrases?
+				</ol>
+
+				<p>
+					There are 6 songs in total, and phrases A, B, and C are common.<br />
+					Finally, please answer a few questions about your musical background.
+				</p>
+
+				<p>
+					<b>Note: Listen to all songs from beginning to end without skipping.</b>
+					You can listen to them over and over again.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- song 1 -->
+	<div class="col-xs-12 col-md-12 fields">
+		<div class="main-phrase">
+			<div class="question-title">Phrases A, B, C</div>
+
+			<div class="phrase">
+				<div class="question-text"><b>Phrase A</b></div>
+				<audio controls>
+					<source src="${PhraseA}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase B</b></div>
+				<audio controls>
+					<source src="${PhraseB}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase C</b></div>
+				<audio controls>
+					<source src="${PhraseC}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="form-item">
+				<div class="question-title">Song 1 / 6</div>
+
+				<div class="phrases">
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 1</b></div>
+						<audio controls>
+							<source src="${Song1_1}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="1-p1-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="1-p1-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="1-p1-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 2</b></div>
+						<audio controls>
+							<source src="${Song1_2}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="1-p2-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="1-p2-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="1-p2-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 3</b></div>
+						<audio controls>
+							<source src="${Song1_3}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="1-p3-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="1-p3-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="1-p3-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 4</b></div>
+						<audio controls>
+							<source src="${Song1_4}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="1-p4-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="1-p4-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="1-p4-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 5</b></div>
+						<audio controls>
+							<source src="${Song1_5}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="1-p5-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="1-p5-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="1-p5-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+				</div>
+
+				<div class="question-text"><b>Q.</b> How natural are the transitions between two phrases?</div>
+				<ul>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 1 and 2, the transition between them is</div>
+						<select name="1-p12-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 2 and 3, the transition between them is</div>
+						<select name="1-p23-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 3 and 4, the transition between them is</div>
+						<select name="1-p34-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 4 and 5, the transition between them is</div>
+						<select name="1-p45-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- song 2 -->
+	<div class="col-xs-12 col-md-12 fields">
+		<div class="main-phrase">
+			<div class="question-title">Phrases A, B, C (same as above)</div>
+
+			<div class="phrase">
+				<div class="question-text"><b>Phrase A</b></div>
+				<audio controls>
+					<source src="${PhraseA}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase B</b></div>
+				<audio controls>
+					<source src="${PhraseB}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase C</b></div>
+				<audio controls>
+					<source src="${PhraseC}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="form-item">
+				<div class="question-title">Song 2 / 6</div>
+
+				<div class="phrases">
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 1</b></div>
+						<audio controls>
+							<source src="${Song2_1}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="2-p1-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="2-p1-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="2-p1-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 2</b></div>
+						<audio controls>
+							<source src="${Song2_2}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="2-p2-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="2-p2-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="2-p2-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 3</b></div>
+						<audio controls>
+							<source src="${Song2_3}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="2-p3-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="2-p3-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="2-p3-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 4</b></div>
+						<audio controls>
+							<source src="${Song2_4}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="2-p4-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="2-p4-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="2-p4-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 5</b></div>
+						<audio controls>
+							<source src="${Song2_5}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="2-p5-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="2-p5-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="2-p5-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+				</div>
+
+				<div class="question-text"><b>Q.</b> How natural are the transitions between two phrases?</div>
+				<ul>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 1 and 2, the transition between them is</div>
+						<select name="2-p12-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 2 and 3, the transition between them is</div>
+						<select name="2-p23-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 3 and 4, the transition between them is</div>
+						<select name="2-p34-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 4 and 5, the transition between them is</div>
+						<select name="2-p45-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- song 3 -->
+	<div class="col-xs-12 col-md-12 fields">
+		<div class="main-phrase">
+			<div class="question-title">Phrases A, B, C (same as above)</div>
+
+			<div class="phrase">
+				<div class="question-text"><b>Phrase A</b></div>
+				<audio controls>
+					<source src="${PhraseA}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase B</b></div>
+				<audio controls>
+					<source src="${PhraseB}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase C</b></div>
+				<audio controls>
+					<source src="${PhraseC}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="form-item">
+				<div class="question-title">Song 3 / 6</div>
+
+				<div class="phrases">
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 1</b></div>
+						<audio controls>
+							<source src="${Song3_1}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="3-p1-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="3-p1-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="3-p1-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 2</b></div>
+						<audio controls>
+							<source src="${Song3_2}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="3-p2-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="3-p2-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="3-p2-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 3</b></div>
+						<audio controls>
+							<source src="${Song3_3}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="3-p3-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="3-p3-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="3-p3-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 4</b></div>
+						<audio controls>
+							<source src="${Song3_4}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="3-p4-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="3-p4-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="3-p4-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 5</b></div>
+						<audio controls>
+							<source src="${Song3_5}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="3-p5-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="3-p5-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="3-p5-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+				</div>
+
+				<div class="question-text"><b>Q.</b> How natural are the transitions between two phrases?</div>
+				<ul>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 1 and 2, the transition between them is</div>
+						<select name="3-p12-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 2 and 3, the transition between them is</div>
+						<select name="3-p23-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 3 and 4, the transition between them is</div>
+						<select name="3-p34-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 4 and 5, the transition between them is</div>
+						<select name="3-p45-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- song 4 -->
+	<div class="col-xs-12 col-md-12 fields">
+		<div class="main-phrase">
+			<div class="question-title">Phrases A, B, C (same as above)</div>
+
+			<div class="phrase">
+				<div class="question-text"><b>Phrase A</b></div>
+				<audio controls>
+					<source src="${PhraseA}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase B</b></div>
+				<audio controls>
+					<source src="${PhraseB}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase C</b></div>
+				<audio controls>
+					<source src="${PhraseC}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="form-item">
+				<div class="question-title">Song 4 / 6</div>
+
+				<div class="phrases">
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 1</b></div>
+						<audio controls>
+							<source src="${Song4_1}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="4-p1-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="4-p1-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="4-p1-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 2</b></div>
+						<audio controls>
+							<source src="${Song4_2}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="4-p2-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="4-p2-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="4-p2-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 3</b></div>
+						<audio controls>
+							<source src="${Song4_3}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="4-p3-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="4-p3-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="4-p3-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 4</b></div>
+						<audio controls>
+							<source src="${Song4_4}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="4-p4-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="4-p4-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="4-p4-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 5</b></div>
+						<audio controls>
+							<source src="${Song4_5}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="4-p5-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="4-p5-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="4-p5-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+				</div>
+
+				<div class="question-text"><b>Q.</b> How natural are the transitions between two phrases?</div>
+				<ul>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 1 and 2, the transition between them is</div>
+						<select name="4-p12-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 2 and 3, the transition between them is</div>
+						<select name="4-p23-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 3 and 4, the transition between them is</div>
+						<select name="4-p34-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 4 and 5, the transition between them is</div>
+						<select name="4-p45-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- song 5 -->
+	<div class="col-xs-12 col-md-12 fields">
+		<div class="main-phrase">
+			<div class="question-title">Phrases A, B, C (same as above)</div>
+
+			<div class="phrase">
+				<div class="question-text"><b>Phrase A</b></div>
+				<audio controls>
+					<source src="${PhraseA}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase B</b></div>
+				<audio controls>
+					<source src="${PhraseB}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase C</b></div>
+				<audio controls>
+					<source src="${PhraseC}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="form-item">
+				<div class="question-title">Song 5 / 6</div>
+
+				<div class="phrases">
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 1</b></div>
+						<audio controls>
+							<source src="${Song5_1}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="5-p1-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="5-p1-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="5-p1-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 2</b></div>
+						<audio controls>
+							<source src="${Song5_2}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="5-p2-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="5-p2-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="5-p2-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 3</b></div>
+						<audio controls>
+							<source src="${Song5_3}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="5-p3-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="5-p3-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="5-p3-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 4</b></div>
+						<audio controls>
+							<source src="${Song5_4}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="5-p4-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="5-p4-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="5-p4-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 5</b></div>
+						<audio controls>
+							<source src="${Song5_5}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="5-p5-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="5-p5-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="5-p5-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+				</div>
+
+				<div class="question-text"><b>Q.</b> How natural are the transitions between two phrases?</div>
+				<ul>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 1 and 2, the transition between them is</div>
+						<select name="5-p12-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 2 and 3, the transition between them is</div>
+						<select name="5-p23-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 3 and 4, the transition between them is</div>
+						<select name="5-p34-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 4 and 5, the transition between them is</div>
+						<select name="5-p45-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- song 6 -->
+	<div class="col-xs-12 col-md-12 fields">
+		<div class="main-phrase">
+			<div class="question-title">Phrases A, B, C (same as above)</div>
+
+			<div class="phrase">
+				<div class="question-text"><b>Phrase A</b></div>
+				<audio controls>
+					<source src="${PhraseA}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase B</b></div>
+				<audio controls>
+					<source src="${PhraseB}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+			<div class="phrase">
+				<div class="question-text"><b>Phrase C</b></div>
+				<audio controls>
+					<source src="${PhraseC}" />
+					Your browser does not support the
+					<code>audio</code> element.
+				</audio>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="form-item">
+				<div class="question-title">Song 6 / 6</div>
+
+				<div class="phrases">
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 1</b></div>
+						<audio controls>
+							<source src="${Song6_1}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="6-p1-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="6-p1-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="6-p1-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 2</b></div>
+						<audio controls>
+							<source src="${Song6_2}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="6-p2-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="6-p2-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="6-p2-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 3</b></div>
+						<audio controls>
+							<source src="${Song6_3}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="6-p3-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="6-p3-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="6-p3-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 4</b></div>
+						<audio controls>
+							<source src="${Song6_4}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="6-p4-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="6-p4-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="6-p4-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+
+					<div class="phrase">
+						<div class="question-text"><b>Phrase 5</b></div>
+						<audio controls>
+							<source src="${Song6_5}" />
+							Your browser does not support the
+							<code>audio</code> element.
+						</audio>
+					</div>
+					<ul>
+						<div class="question-select">
+							<div class="question-text">This phrase is a repetition of</div>
+							<select name="6-p5-repetition" required>
+								<option value="" hidden>--Which phrase?--</option>
+								<option value="A">Phrase A</option>
+								<option value="B">Phrase B</option>
+								<option value="C">Phrase C</option>
+								<option value="N">None of phrases A, B, or C</option>
+							</select>
+						</div>
+						<div class="question-select">
+							<div class="question-text">Between this phrase and <span name="6-p5-chosen-phrase">your chosen phrase</span>, there is</div>
+							<select name="6-p5-variation" required>
+								<option value="" hidden>--How much variation?--</option>
+								<option value="4">Much variation</option>
+								<option value="3">Some variation</option>
+								<option value="2">Little variation</option>
+								<option value="1">No variation (they are the same)</option>
+							</select>
+						</div>
+					</ul>
+				</div>
+
+				<div class="question-text"><b>Q.</b> How natural are the transitions between two phrases?</div>
+				<ul>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 1 and 2, the transition between them is</div>
+						<select name="6-p12-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 2 and 3, the transition between them is</div>
+						<select name="6-p23-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 3 and 4, the transition between them is</div>
+						<select name="6-p34-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+					<div class="question-select">
+						<div class="question-text">When combining phrases 4 and 5, the transition between them is</div>
+						<select name="6-p45-natural" required>
+							<option value="" hidden>--How natural?--</option>
+							<option value="4">Natural</option>
+							<option value="3">Somewhat natural</option>
+							<option value="2">Somewhat unnatural</option>
+							<option value="1">Unnatural</option>
+						</select>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-12 col-md-12 fields">
+		<div class="form-group">
+			<div class="form-item">
+				<div class="question-title">Musical Background</div>
+
+				<div class="questions">
+					<div class="question-item">
+						<div class="question-text">
+							<b>Q1.</b> Do you have any musical experience, such as playing an instrument or vocal music? <br />
+							If yes, what and how long have/had you been playing?
+						</div>
+						<ul class="question-options">
+							<label><input type="radio" name="experience" value="Y" required />Yes</label>
+							<label><input type="radio" name="experience" value="N" />No</label>
+						</ul>
+						<ul>
+							<p>
+								<label>What? (e.g. piano, guitar, vocal music)</label>
+								<input type="text" name="instrument" required />
+							</p>
+							<p>
+								<label>How long? (e.g. 5 years, 10 months)</label>
+								<input type="text" name="years" required />
+							</p>
+							<br />
+						</ul>
+					</div>
+					<div class="question-item">
+						<div class="question-text"><b>Q2.</b> On average, how many minutes a day do you listen to music?</div>
+						<ul class="question-options">
+							<label><input type="number" name="minutes" min="0" required />min.</label>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-12 col-md-12 fields">
+		<div class="form-group">
+			<div class="form-item">
+				<div class="question-title">Feedback</div>
+
+				<div class="questions">
+					<div class="question-item">
+						<div class="question-text">If you have any questions or comments about this task, let us know by submitting feedback! (optional)</div>
+						<div class="question-options">
+							<textarea name="feedback" rows="2"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style type="text/css">
+		#submitButton {
+			white-space: normal;
+		}
+
+		.instruction {
+			font-size: 1.2em;
+		}
+
+		.main-phrase {
+			padding: 20px;
+			margin: 20px 0px;
+			border: 1px solid #333333;
+		}
+
+		.form-item {
+			padding: 20px;
+			margin: 20px 0px;
+			border: 1px dashed #333333;
+		}
+
+		.phrases {
+			margin: 0 0 25px 0;
+		}
+
+		.phrase {
+			margin: 15px 0 0 0;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 15px;
+		}
+
+		.question-select {
+			padding: 3px 0;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 10px;
+		}
+
+		.question-select select {
+			padding: 5px 5px;
+			font-weight: bold;
+			font-size: 1.1em;
+		}
+
+		.questions {
+			padding: 10px;
+			box-sizing: border-box;
+		}
+
+		.question-title {
+			font-weight: bold;
+			font-size: 1.4em;
+		}
+
+		.question-text {
+			font-size: 1.2em;
+		}
+
+		.question-options {
+			list-style: none;
+			margin: 20px 0;
+			font-size: 1.1em;
+		}
+
+		.question-options input {
+			margin: 0 10px;
+		}
+
+		.question-options label {
+			margin-right: 2em;
+		}
+
+		textarea {
+			width: 100%;
+		}
+	</style>
+
+	<!-- Close internal style sheet -->
+	<!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries -->
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"
+		integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4"
+		crossorigin="anonymous"
+	></script>
+	<script>
+		$(document).ready(function () {
+			// $(function () {
+			// 	$(".dropdown-menu .dropdown-item").click(function () {
+			// 		var dropdown = $(".dropdown-toggle", $(this).closest(".dropdown"));
+			// 		dropdown.find(".dropdown-text").text($(this).text());
+			// 		dropdown.attr("value", $(this).attr("value"));
+			// 	});
+			// });
+			$('input[name="experience"]').change(function () {
+				var radio_value = $('input[name="experience"]:checked').val();
+				if (radio_value == "N") {
+					$('input[name="instrument"]').attr("required", false);
+					$('input[name="years"]').attr("required", false);
+				} else {
+					$('input[name="instrument"]').attr("required", true);
+					$('input[name="years"]').attr("required", true);
+				}
+			});
+
+			$('select[name$="-repetition"]').each(function (i, elem) {
+				$(elem).change(function () {
+					var selected_val = $(elem).val();
+					if (selected_val == "N") {
+						$("select[name=" + elem.name.replace("-repetition", "-variation") + "]").attr("disabled", true);
+						$("[name=" + elem.name.replace("-repetition", "-chosen-phrase") + "]").text("your chosen phrase");
+					} else {
+						$("select[name=" + elem.name.replace("-repetition", "-variation") + "]").attr("disabled", false);
+						$("[name=" + elem.name.replace("-repetition", "-chosen-phrase") + "]").text("phrase " + selected_val);
+					}
+				});
+			});
+		});
+	</script>
+</section>
